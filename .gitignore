@@ -14,3 +14,4 @@ __pycache__/
 +.env*
 +frontend/.vite
 +frontend/dist
+*.patch
