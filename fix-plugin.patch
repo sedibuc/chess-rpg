@@ -1,0 +1,27 @@
+*** Begin Patch
+*** Update File: frontend/package.json
+@@
+   "devDependencies": {
++    "@vitejs/plugin-react": "^4.3.0",
+     "@types/react": "^18.2.66",
+     "@types/react-dom": "^18.2.22",
+     "typescript": "^5.4.0",
+     "vite": "^5.2.0"
+   }
+ }
+*** End Patch
+*** Begin Patch
+*** Update File: backend/app/main.py
+@@
+ app = FastAPI(title="Chess RPG API", version="0.1.0")
+ 
++@app.get("/")
++def root():
++    return {"message": "Chess RPG API", "frontend": "http://localhost:5173", "docs": "/docs"}
++
+ @app.get("/health")
+ def health():
+     return {"status": "ok", "env": settings.app_env}
+ 
+ app.include_router(match.router)
+*** End Patch
