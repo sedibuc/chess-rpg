@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    { "id": "patchPath", "type": "promptString", "description": "Ruta del archivo .patch", "default": "changes.patch" }
+  ],
+  "tasks": [
+    {
+      "label": "Aplicar parche (3-way)",
+      "type": "shell",
+      "command": "git switch -c feat/chatgpt-$(date +%s) && git apply --whitespace=fix --3way '${input:patchPath}' && git add -A && git commit -m \"Aplicar parche ChatGPT\"",
+      "problemMatcher": []
+    }
+  ]
+}

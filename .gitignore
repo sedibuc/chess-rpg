@@ -1,0 +1,16 @@
+__pycache__/
++.pytest_cache/
++.venv/
++env/
++dist/
++node_modules/
++.DS_Store
++.vscode/.history
++.idea/
++.coverage
++coverage.xml
++*.log
++*.env
++.env*
++frontend/.vite
++frontend/dist
